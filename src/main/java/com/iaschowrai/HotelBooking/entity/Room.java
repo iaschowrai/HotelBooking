@@ -12,6 +12,8 @@ import java.util.List;
 @Table(name = "rooms")
 public class Room {
 
+//    Missed to calculate how many rooms available on that time, total number or rooms allocated for booking.
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
