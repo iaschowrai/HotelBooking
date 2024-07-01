@@ -24,7 +24,7 @@ public class BookingDTO {
     private int numOfChildren;
     private int totalNumOfGuest;
 
-    private String bookingConfirmationCOde;
+    private String bookingConfirmationCode;
 
     private UserDTO user;
     private RoomDTO room;
