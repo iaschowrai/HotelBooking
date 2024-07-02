@@ -1,0 +1,46 @@
+Class User {
+    - long id
+    - String email
+    - String password
+    - String name
+    - String phoneNumber
+    - String role
+    - List<Booking> bookings
+    + Collection<? extends GrantedAuthority> getAuthorities()
+    + String getUsername()
+    + boolean isAccountNonExpired()
+    + boolean isAccountNonLocked()
+    + boolean isCredentialsNonExpired()
+    + boolean isEnabled()
+}
+
+Class Booking {
+    - long id
+    - LocalDateTime checkInDate
+    - LocalDateTime checkOutDate
+    - int numOfAdults
+    - int numOfChildren
+    - int totalNumOfGuest
+    - String bookingConfirmationCode
+    - User user
+    - Room room
+    + void calculateTotalNumberOfGuest()
+    + void setNumOfAdults(int numOfAdults)
+    + void setNumOfChildren(int numOfChildren)
+    + String toString()
+}
+
+Class Room {
+    - long id
+    - String bookingConfirmation
+    - String roomType
+    - String roomNumber
+    - BigDecimal roomPrice
+    - String roomPhotoURL
+    - String roomDescription
+    - List<Booking> bookings
+    + String toString()
+}
+
+User "1" --> "0..*" Booking
+Room "1" --> "0..*" Booking

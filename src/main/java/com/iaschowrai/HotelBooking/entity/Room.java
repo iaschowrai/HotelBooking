@@ -24,6 +24,8 @@ public class Room {
     private BigDecimal roomPrice;
     private String roomPhotoURL;
     private String roomDescription;
+
+    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Booking> bookings = new ArrayList<>();
 
 
